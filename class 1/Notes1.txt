@@ -1,0 +1,66 @@
+Frontend - UI/UX
+Backend - Business logic/Data
+
+Frontend - HTML (Structure of text/images), CSS (styling)
+Javascript - decion making , dynamicity and logic of website
+
+Deploying and hosting - files are transferred to a public machine, having its own IP address
+We can call ip address and get our HTML CSS JS Files 
+This public machine is called - Frontend server 
+
+DNS server - special server having the mapping
+like 1.12.32 - > xyz.com 
+
+Browser parses the file and shows to user
+
+Why Backend?? 
+
+Database - having private data (personalized) 
+Backend server - interacts with database and fetches the data
+
+-------------
+
+Node js - Runtime environment for Javascript to run
+Browser - V8 engine (node js is inside v8 engine) for frontend 
+Express Js - this lets nodejs works in backend , it creates API 
+
+API - function which is exposed to the internet
+2 modules - one needs to expose and another to take - first is API
+backend needs to expose and frontend calls the API
+
+Rest(Representational State Transfer) API - do not have their own state but does state Transfer
+
+
+rm -r * - this command deletes all file in folder
+
+---------------------
+STARTING NODE JS:-
+1) npm init 
+2) create index.js which is entry file
+3) npm install express
+
+----------------------
+when frontend hits backend it makes request (req)
+when backend to frontend what we get is response (res)
+
+Json - javascript object notation (communication happend through objects)
+
+// frontend puts data in Body (req)
+// to extract the data from frontend we need to have a key .str is a key(inside which value is there) (it need to be fixed)
+// then backend extracts from that key 
+
+// similarly in backend (res)
+// frontend needs to know the key from bakend- here "vowel"
+
+
+
+
+
+
+
+----------------------
+Resources :
+1) Download Node - https://nodejs.org/en/download
+2) Learning Node -  https://medium.com/@adnanrahic/hello-world-app-with-node-js-and-express-c1eb7cfa8a30
+3) Postman - https://www.postman.com/downloads/
+3) First class output - https://58d2-2405-201-4025-5f-f518-6236-5fa8-afbf.in.ngrok.io/countvowels

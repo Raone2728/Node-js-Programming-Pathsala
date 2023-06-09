@@ -1,0 +1,143 @@
+get----use query
+post ---use payload
+3 way handskhaing--req res ackownlodgement  
+imdempotent
+https://kinsta.com/blog/http-status-codes/
+
+To do app backend
+- /getToDoList
+- /deleteItem
+- /addItem
+- /updateItem
+Two ways to pass parameters : 
+Query and Body 
+
+Query -> in url we are passing the parameters (<apiname>/?num1=2&num2=3)
+it is less secure as it is easily visible on the url 
+some confidential credentials can also be visible
+
+Body -> just have to pass apiname and create payload(content) seperate 
+payload/Body => 
+{
+    "username" : Turwash
+    "password" : xyz 
+}
+It is secured 
+
+-----------------
+
+Get and post Api :
+
+We use Query approach in Get. use when parameters should not be hidden
+We use Body approach in Post. here posting data which must be secured 
+
+-----------------
+
+Different types of API : 
+1) Get 
+2) Post 
+3) put
+4) Patch etc
+
+CRUD -> create read update delete 
+API is alwys one of these 4 operations 
+
+which API to use when ? 
+Read => Get, (sometimes even use POST for secured data)
+Create => Post 
+Update => Put and Patch (put for create or replacing , Patch for Updating)
+Delete => Delete 
+
+
+-----------------
+Idempotent -> API should be Idempotent in nature, if called multiple times it should not create issue or increase the amount
+rather save it in another instance.
+eg: Idempotent: Storing the user list
+
+API /counter
+   count += 1;
+
+Non Idempotent-> it can be a duplicate, same can be counted twice thrice
+
+"express does not counts retrial twice"
+
+
+client -----------> Server 
+client sends request to server, and server responds with the file and
+then client sends acknowledgment as if received
+if client not give this then server will retry(retransmit)
+similarly for client if not gets acknowledgment it retry again(retransmit)
+
+-----------------
+
+Security : HTTP V/S HTTPS 
+
+public/private key 
+
+Machine1 ---->> Machine2 (not directly connected via internet, data will flow using several machine, wires and servers)
+If data is sent in plain form , it can be read by anyone 
+To avoid id Machine1 and Machine2 it has (public and private key)
+machines generate a public and private key pair
+Public key -> known by eveyone 
+Private key -> only known to Machine2
+Data will be encrypted using Public key 
+Now to decrypt only private key is needed
+
+HTTPS => SSL certificate (different for frontend and backend and also can be same)
+
+--------
+to check backend API: 
+right click inspect -> network -> Fetch/XHR 
+
+----------
+UTF 8/16 -> it is a standard character encoding
+encoding is characters which is valid 
+same character should be used for server and client 
+
+-----------
+
+Status Codes :- 
+
+2xx -> 200's codes are basically for success scenerios 
+200 is general success
+2001 is created success
+2002 is processing 
+
+4xx -> 400's are for client side issues
+Client side request issue 
+Bad request (400)
+Payment required(402)
+unauthenticated(403)
+unauthorized(401)
+page not found (404)
+method not allowed(405)
+
+Then comes 5xx's 
+Server side Errors
+500 => Internal server errors (unexpected errors)
+
+3xx's are generally redirections, redirect request to another url 
+
+Resource Read this article for Status codes :- https://kinsta.com/blog/http-status-codes/
+
+Example :
+  if(isNaN(numbers[i])){
+            res.status(400).send({
+                error:"Not a valid Number"
+            })
+        }
+
+-------------
+
+Homework : (Time till monday)
+1) To-do app backend
+- /getToDoList
+- /deleteItem
+- /addItem
+- /updateItem
+
+using basic-frontend and backend
+
+2) Simple Calculator API 
+
+and -> Resource Read this article for Status codes :- https://kinsta.com/blog/http-status-codes/
